@@ -14,6 +14,11 @@
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 </head>
+<style>
+	.fonts{
+		font-size: 1.7rem;
+	}
+</style>
 
 <body>
 
@@ -310,6 +315,89 @@
 					<li>Image and multimedia</li>
 					<li>Inline text semantics</li>
 				</section>-->
+			</section>
+			<section>
+				<section>
+					<h2>Array Methods</h2>
+				</section>
+				<section>
+					<h2>Array.from(object)</h2>
+					<pre>
+						<code data-trim >
+						const newArray = Array.from('foo') 
+						</code>
+					</pre>
+					<p>Returns a new array of characters ['f','o','o']</p>
+				</section>
+				<section>
+					<h3>Array.isArray <span>(value)</span></h3>
+					<pre>
+						<code data-trim>
+							Array.isArray ([1, 2, 3]); // true
+							Array.isArray ({foo: 123}); // false
+							Array.isArray ('foobar'); // false
+							Array.isArray (undefined); // false
+						</code>
+					</pre>
+					<p>This method typically determines if the <span class="fragment highlight-green">value</span> passed in is an array or not. Then returns a boolean</p>
+					
+				</section>
+				<section>
+					<h3>Array.every <span style="color: green;">(value)</span></h3>
+					<pre><code data-trim>
+						const isBelow_40 = 
+						(currentValue) => currentValue < 40; 
+						const array1=[1, 30, 39, 29, 10, 13];
+						console.log(array1.every(isBelowThreshold)); 
+						// expected output: true
+					</code></pre>
+					<p style="font-size: 1.7rem;">The every method executes the provided callback function once for each element present in the array until it
+						finds the one where callback returns a falsy value. If such an element is found, the every method immediately
+						returns false. Otherwise, if callback returns a truthy value for all elements, every returns true.</p>
+						<span class="fragment highlight-red fonts">
+							Caution: Calling this method on an empty array will return true for any condition!
+						</span>
+				</section>
+				<section>
+					<h3>Array.reduce <span style="color: green;">(value)</span></h3>
+					<pre>
+						<code data-trim="">
+							const array1 = [1, 2, 3, 4];
+							const reducer = (accumulator, currentValue) => 
+							accumulator + currentValue;
+
+							// 1 + 2 + 3 + 4
+							console.log(array1.reduce(reducer));
+							// expected output: 10
+
+							// 5 + 1 + 2 + 3 + 4
+							console.log(array1.reduce(reducer, 5));
+							// expected output: 15
+
+						</code>
+					</pre>
+					<p  class="fonts">The reducer function takes four arguments:</p>
+					<ul class="fonts">
+						<li>Accumulator</li>
+						<li>Current Value</li>
+						<li>Current index</li>
+						<li>Source Array</li>
+					</ul>
+					
+				</section>
+				<section>
+<p class="fonts"> Your reducer function's returned value is assigned to the accumulator, whose value is remembered
+	across each
+	iteration throughout the array, and ultimately becomes the final, single resulting value.</p>
+	<p class="fonts">The reduce() method reduces the array to a single value.</p>
+	<p class="fonts">
+		The reduce() method executes a provided function for each value of the array (from left-to-right).</p>
+	<p class="fonts">The return value of the function is stored in an accumulator (result/total).</p>
+	<p class="fonts">Note: reduce() does not execute the function for array elements without values.</p>
+	<p class="fonts">Note: This method does not change the original array.</p>
+	<button type="button" class="fonts"><a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_reduce2">Live Demo</a></button>
+				</section>
+				
 			</section>
 			<section>
 				<h1>Thank you!</h1>
